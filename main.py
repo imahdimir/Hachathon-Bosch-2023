@@ -134,8 +134,6 @@ def find_intersection_point(px , py , vx , vy , p1x , p1y , v1x , v1y) :
             except :
                 return np.nan , np.nan
 
-vect_find_int_point = np.vectorize(find_intersection_point)
-
 def main() :
     pass
 
@@ -236,7 +234,6 @@ def main() :
 
     ##
     # calculate intersection points
-
     duo = {
             (c.i1x , c.i1y) : (c.x1 , c.y1 , c.vx1 , c.vy1) ,
             (c.i2x , c.i2y) : (c.x2 , c.y2 , c.vx2 , c.vy2) ,
@@ -258,7 +255,10 @@ def main() :
                                  axis = 1 ,
                                  result_type = 'expand')
 
-##
+    ##
+    df.to_excel('Output.xlsx')
+
+    ##
 
 ##
 
